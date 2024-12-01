@@ -150,29 +150,3 @@ export default FunctionalComponent;
 //     fontSize: 20,
 //   },
 // });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

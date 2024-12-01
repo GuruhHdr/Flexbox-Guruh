@@ -1,90 +1,178 @@
-import React, { Component } from 'react';
-import { Text, View, Image, StyleSheet } from 'react-native';
+//Soal No.2 
+// Contoh Komponen Fungsional:
+import React from 'react';
+import { Text, View } from 'react-native';
 
-class MateriFlexBox extends Component {
-  render() {
-    return (
-      <View>
-        {/* Warna Samping */}
-        <View style={styles.colorContainer}>
-          <View style={[styles.colorBox, { backgroundColor: '#ee5253' }]} />
-          <View style={[styles.colorBox, { backgroundColor: '#feca57', width: 200 }]} />
-          <View style={[styles.colorBox, { backgroundColor: '#1dd1a1' }]} />
-          <View style={[styles.colorBox, { backgroundColor: '#5f27cd' }]} />
-        </View>
+const FunctionalComponent = () => {
+  return (
+    <View>
+      <h1>Hello, React Native!</h1>
+    </View>
+  );
+};
 
-        {/* Navigasi */}
-        <View style={styles.menuContainer}>
-          {['Beranda', 'Video', 'Playlist', 'Komunitas', 'Channel', 'Tentang'].map((item, index) => (
-            <Text key={index} style={styles.menuText}>
-              {item}
-            </Text>
-          ))}
-        </View>
+export default FunctionalComponent;
 
-        {/* Foto Profil dan Nama */}
-        <View style={styles.profileContainer}>
-          <Image
-            source={{
-              uri: 'https://yt3.googleusercontent.com/x-E_8y-jZE2VfS36m5NovGK3SXb5dbGnEht2i_WyAJU8C3TkBLWHoYkeXyCO0FdNOj7_-uKHXw=s160-c-k-c0x00ffffff-no-rj',
-            }}
-            style={styles.profileImage}
-          />
-          <View>
-            <Text style={styles.profileName}>Guruh Hdr</Text>
-            <Text style={styles.subscriberText}>10Jt Berlangganan</Text>
-          </View>
-        </View>
-      </View>
-    );
-  }
-}
 
-const styles = StyleSheet.create({
-  colorContainer: {
-    flexDirection: 'row',
-    backgroundColor: '#c8d6e5',
-    alignItems: 'flex-start',
-    justifyContent: 'flex-start', // Menyusun warna ke kiri
-  },
-  colorBox: {
-    width: 50,
-    height: 100,
-  },
-  menuContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    marginVertical: 10,
-  },
-  menuText: {
-    fontSize: 16,
-    color: '#333',
-  },
-  profileContainer: {
-    flexDirection: 'column', // Menyusun elemen secara vertikal
-    alignItems: 'center', // Memusatkan ke tengah secara horizontal
-    justifyContent: 'center',
-    marginTop: 20,
-  },
-  profileImage: {
-    width: 100,
-    height: 100,
-    borderRadius: 50,
-    marginBottom: 10, // Jarak antara gambar dan teks
-  },
-  profileName: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: 'green',
-    textAlign: 'center',
-  },
-  subscriberText: {
-    fontSize: 14,
-    color: '#555',
-    textAlign: 'center',
-  },
-});
+// Contoh Komponen Berbasis Kelas:
+// import React, { Component } from 'react';
+// import { Text, View } from 'react-native';
+
+// class ClassComponent extends Component {
+//   render() {
+//     return (
+//       <View>
+//         <Text>Hello, React Native!</Text>
+//       </View>
+//     );
+//   }
+// }
+
+// export default ClassComponent;
+
+// Soal No 3  
+// import React from 'react';
+// import { View, Button, StyleSheet } from 'react-native';
+
+// const App = () => {
+//   return (
+//     <View style={styles.container}>
+//       <View style={styles.buttonContainer}>
+//         <Button title="Button 1" color="blue" onPress={() => alert('Button 1 pressed')} />
+//         <Button title="Button 2" color="green" onPress={() => alert('Button 2 pressed')} />
+//       </View>
+//     </View>
+//   );
+// };
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//   },
+//   buttonContainer: {
+//     flexDirection: 'row',
+//     justifyContent: 'space-between',
+//     width: 200,
+//   },
+// });
+
+// export default App;
 
 
 
-export default MateriFlexBox;
+// No.4
+// import React, { useState } from 'react';
+// import { View, Button, Text, StyleSheet } from 'react-native';
+
+// const App = () => {
+//   const [count, setCount] = useState(0);
+
+//   return (
+//     <View style={styles.container}>
+//       <Text style={styles.text}>Jumlah Klik: {count}</Text>
+//       <Button title="Klik Saya" onPress={() => setCount(count + 1)} />
+//     </View>
+//   );
+// };
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//   },
+//   text: {
+//     fontSize: 20,
+//     marginBottom: 10,
+//   },
+// });
+
+// export default App;
+
+
+// Soal No.5
+
+// import React from 'react';
+// import { View, Text, Button, StyleSheet } from 'react-native';
+// import { NavigationContainer } from '@react-navigation/native';
+// import { createStackNavigator } from '@react-navigation/stack';
+// import type { NativeStackScreenProps } from '@react-navigation/native-stack'; // Import tipe
+
+// // Tipe untuk Stack Navigator
+// type RootStackParamList = {
+//   First: undefined;
+//   Second: undefined;
+// };
+
+// type FirstScreenProps = NativeStackScreenProps<RootStackParamList, 'First'>;
+
+// const Stack = createStackNavigator<RootStackParamList>();
+
+// const FirstScreen = ({ navigation }: FirstScreenProps) => {
+//   return (
+//     <View style={styles.container}>
+//       <Button
+//         title="Go to Second Screen"
+//         onPress={() => navigation.navigate('Second')}
+//       />
+//     </View>
+//   );
+// };
+
+// const SecondScreen = () => {
+//   return (
+//     <View style={styles.container}>
+//       <Text style={styles.text}>This is the Second Screen</Text>
+//     </View>
+//   );
+// };
+
+// export default function App() {
+//   return (
+//     <NavigationContainer>
+//       <Stack.Navigator initialRouteName="First">
+//         <Stack.Screen name="First" component={FirstScreen} />
+//         <Stack.Screen name="Second" component={SecondScreen} />
+//       </Stack.Navigator>
+//     </NavigationContainer>
+//   );
+// }
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//   },
+//   text: {
+//     fontSize: 20,
+//   },
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View, Image, StyleSheet } from 'react-native';
 
-class MateriFlexBox extends Component {
+class flexbox extends Component {
   render() {
     return (
       <View>
@@ -31,7 +31,7 @@ class MateriFlexBox extends Component {
             style={styles.profileImage}
           />
           <View>
-            <Text style={styles.profileName}>Guruh Hdr</Text>
+            <Text style={styles.profileName}>Guruh Hendryan Hdr</Text>
             <Text style={styles.subscriberText}>10Jt Berlangganan</Text>
           </View>
         </View>
@@ -87,4 +87,5 @@ const styles = StyleSheet.create({
 
 
 
-export default MateriFlexBox;
+export default flexbox;
+
